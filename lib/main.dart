@@ -1,5 +1,6 @@
 import 'package:animation/src/animated_rating_bar.dart';
 import 'package:animation/src/circle_rotation.dart';
+import 'package:animation/src/square_illustration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,9 @@ class MyApp extends StatelessWidget {
           CustomListTile(
               title: "Circular Animation", nextPage: CircularAnimation()),
           CustomListTile(
-              title: "Animated Rating Bar", nextPage: AnimatedRatingBar())
+              title: "Animated Rating Bar", nextPage: AnimatedRatingBar()),
+          CustomListTile(
+              title: "3D Illustration", nextPage: SquareIllustration())
         ],
       ),
     );

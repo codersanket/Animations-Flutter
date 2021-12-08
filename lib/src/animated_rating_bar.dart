@@ -69,27 +69,28 @@ class RenderPage extends RenderBox {
     if (checkPostion(details.localPosition)) {
       _location = Offset(details.localPosition.dx, sliderPostion.dy);
       _value = getPercentage(details.localPosition.dx);
-      print(_value);
-      if (_value < 0.33) {
-        color =
-            Color.lerp(Colors.pinkAccent, Colors.yellowAccent, (_value * 3))!;
-      } else if (0.33 < _value && _value < 0.66) {
-        color = Color.lerp(
-            Colors.yellowAccent, Colors.greenAccent, (_value * 1.2))!;
-      }
+
+      // if (_value < 0.33) {
+      //   color =
+      //       Color.lerp(Colors.pinkAccent, Colors.yellowAccent, (_value * 3))!;
+      // } else if (0.33 < _value && _value < 0.66) {
+      //   color = Color.lerp(
+      //       Colors.yellowAccent, Colors.greenAccent, (_value * 1.2))!;
+      // }
     }
 
     markNeedsPaint();
   }
 
-  late double _value = 0.0;
+  late double _value = .5;
 
   Offset get sliderPostion => Offset(size.width / 1.5, size.height / 1.5);
 
   @override
   void paint(PaintingContext context, Offset offset) {
     final canvas = context.canvas;
-    canvas.drawColor(color, BlendMode.src);
+    canvas.drawColor(Color.lerp(Colors.pinkAccent, Colors.greenAccent, _value)!,
+        BlendMode.src);
 
     canvas.drawLine(
         Offset(0 + 20, size.height / 1.5),
