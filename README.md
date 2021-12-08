@@ -1,6 +1,7 @@
 # Flluter Animation
 
-Creating a Repo Where I upload the all animations/concepts created using Flutter
+Repo For Animation. 
+I will be adding a animations every week in this repo.
 
 ## Animations
 
