@@ -1,4 +1,4 @@
-# Flluter Animation
+# Flutter Animation
 
 Repo For Animation. 
 I will be adding a animations every week in this repo.
