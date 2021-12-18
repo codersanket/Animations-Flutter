@@ -70,13 +70,6 @@ class RenderPage extends RenderBox {
       _location = Offset(details.localPosition.dx, sliderPostion.dy);
       _value = getPercentage(details.localPosition.dx);
 
-      // if (_value < 0.33) {
-      //   color =
-      //       Color.lerp(Colors.pinkAccent, Colors.yellowAccent, (_value * 3))!;
-      // } else if (0.33 < _value && _value < 0.66) {
-      //   color = Color.lerp(
-      //       Colors.yellowAccent, Colors.greenAccent, (_value * 1.2))!;
-      // }
     }
 
     markNeedsPaint();

@@ -56,6 +56,12 @@ class _SquareIllustrationState extends State<SquareIllustration>
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
+  }
 }
 
 class Squares extends CustomPainter {
@@ -92,8 +98,6 @@ class Squares extends CustomPainter {
       canvas.drawRect(
           Rect.fromCenter(
               center: offset!,
-              // center,
-              // Offset(center.dx - (10.0 * i), center.dy - ((10.0 * i))),
               width: 200 - (18.0 * (i)),
               height: 200 - (18.0 * (i))),
           Paint()

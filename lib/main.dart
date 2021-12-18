@@ -1,5 +1,9 @@
 import 'package:animation/src/animated_rating_bar.dart';
 import 'package:animation/src/circle_rotation.dart';
+import 'package:animation/src/circular_illusion.dart';
+import 'package:animation/src/custom_slider.dart';
+import 'package:animation/src/illusion.dart';
+import 'package:animation/src/loading_animation.dart';
 import 'package:animation/src/square_illustration.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,18 +17,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: const [
-          CustomListTile(
-              title: "Circular Animation", nextPage: CircularAnimation()),
-          CustomListTile(
-              title: "Animated Rating Bar", nextPage: AnimatedRatingBar()),
-          CustomListTile(
-              title: "3D Illustration", nextPage: SquareIllustration())
-        ],
+    return SafeArea(
+      child: Scaffold(
+        body: ListView(
+          children: const [
+            CustomListTile(
+                title: "Circular Animation", nextPage: CircularAnimation()),
+            CustomListTile(
+                title: "Animated Rating Bar", nextPage: AnimatedRatingBar()),
+            CustomListTile(
+                title: "3D Illustration", nextPage: SquareIllustration()),
+            CustomListTile(title: "Custom Slider", nextPage: CustomSlider()),
+            CustomListTile(
+                title: "Circular Illusion", nextPage: CircularIllusion()),
+            CustomListTile(title: "Illusion", nextPage: Illusion()),
+            CustomListTile(
+                title: "Loading Animation", nextPage: LoadingAnimation())
+          ],
+        ),
       ),
     );
   }
@@ -40,12 +50,10 @@ class CustomListTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: ListTile(
-        tileColor: Colors.red,
-        title: Center(
-          child: Text(
-            title,
-            style: const TextStyle(color: Colors.white),
-          ),
+        leading: Icon(Icons.arrow_forward_ios),
+        title: Text(
+          title,
+          style: const TextStyle(color: Colors.black),
         ),
         onTap: () {
           Navigator.push(context, CupertinoPageRoute(builder: (_) => nextPage));
